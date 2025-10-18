@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+
+
+  build:
+    commands:
+      - echo "=== BUILD PHASE ==="
+      - echo "Copying website files to /var/www/html..."
+      - mkdir -p /var/www/html
+      - cp index.html /var/www/html/
+      - echo "Listing /var/www/html contents..."
+      - ls -la /var/www/html
+
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+
+artifacts:
+  files:
+    - /var/www/html/index.html
+    - appspec.yml
+  
